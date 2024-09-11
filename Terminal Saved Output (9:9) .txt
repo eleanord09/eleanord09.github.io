@@ -1,0 +1,113 @@
+Last login: Mon Sep  9 11:39:25 on ttys000
+1011386@1011386-student-HXJKFAYM265D ~ % date
+Mon Sep  9 11:41:32 EDT 2024
+1011386@1011386-student-HXJKFAYM265D ~ % echo "quiz" > quiz
+1011386@1011386-student-HXJKFAYM265D ~ % ls
+Applications		Library			Public
+Creative Cloud Files	Movies			hi
+Desktop			Music			quiz
+Documents		Pearson			terminal_practice
+Downloads		Pictures
+1011386@1011386-student-HXJKFAYM265D ~ % cd quiz
+cd: not a directory: quiz
+1011386@1011386-student-HXJKFAYM265D ~ % ls quiz
+quiz
+1011386@1011386-student-HXJKFAYM265D ~ % cd quiz
+cd: not a directory: quiz
+1011386@1011386-student-HXJKFAYM265D ~ % cd desktop
+1011386@1011386-student-HXJKFAYM265D desktop % cd quiz
+cd: no such file or directory: quiz
+1011386@1011386-student-HXJKFAYM265D desktop % ls
+20230905110944636.pdf				Terminal Saved Output 2.txt
+Copy of Lab Equipment Bingo 21-22.pdf		Terminal Saved Output.txt
+Screenshot 2024-09-05 at 9.23.05 AM.png		desktop
+Screenshot 2024-09-09 at 10.36.48 AM.png	freud-psyche-1024x613.webp
+Screenshot 2024-09-09 at 10.38.08 AM.png	images.jpg
+Screenshot 2024-09-09 at 10.38.13 AM.png	intro-1683876129.png
+Screenshot 2024-09-09 at 10.38.16 AM.png	shadows-on-cave.png
+Screenshot 2024-09-09 at 11.15.24 AM.png	terminal_practice
+1011386@1011386-student-HXJKFAYM265D desktop % cd ~
+1011386@1011386-student-HXJKFAYM265D ~ % ls
+Applications		Downloads		Pearson			quiz
+Creative Cloud Files	Library			Pictures		terminal_practice
+Desktop			Movies			Public
+Documents		Music			hi
+1011386@1011386-student-HXJKFAYM265D ~ % cd quiz 
+cd: not a directory: quiz
+1011386@1011386-student-HXJKFAYM265D ~ % mv quiz
+usage: mv [-f | -i | -n] [-hv] source target
+       mv [-f | -i | -n] [-v] source ... directory
+1011386@1011386-student-HXJKFAYM265D ~ % cd quiz
+cd: not a directory: quiz
+1011386@1011386-student-HXJKFAYM265D ~ % cd Desktop 
+1011386@1011386-student-HXJKFAYM265D Desktop % ls
+20230905110944636.pdf				Terminal Saved Output 2.txt
+Copy of Lab Equipment Bingo 21-22.pdf		Terminal Saved Output.txt
+Screenshot 2024-09-05 at 9.23.05 AM.png		desktop
+Screenshot 2024-09-09 at 10.36.48 AM.png	freud-psyche-1024x613.webp
+Screenshot 2024-09-09 at 10.38.08 AM.png	images.jpg
+Screenshot 2024-09-09 at 10.38.13 AM.png	intro-1683876129.png
+Screenshot 2024-09-09 at 10.38.16 AM.png	shadows-on-cave.png
+Screenshot 2024-09-09 at 11.15.24 AM.png	terminal_practice
+1011386@1011386-student-HXJKFAYM265D Desktop % echo "quiz" > quiz
+1011386@1011386-student-HXJKFAYM265D Desktop % ls
+20230905110944636.pdf				Terminal Saved Output.txt
+Copy of Lab Equipment Bingo 21-22.pdf		desktop
+Screenshot 2024-09-05 at 9.23.05 AM.png		freud-psyche-1024x613.webp
+Screenshot 2024-09-09 at 10.36.48 AM.png	images.jpg
+Screenshot 2024-09-09 at 10.38.08 AM.png	intro-1683876129.png
+Screenshot 2024-09-09 at 10.38.13 AM.png	quiz
+Screenshot 2024-09-09 at 10.38.16 AM.png	shadows-on-cave.png
+Screenshot 2024-09-09 at 11.15.24 AM.png	terminal_practice
+Terminal Saved Output 2.txt
+1011386@1011386-student-HXJKFAYM265D Desktop % cd quiz
+cd: not a directory: quiz
+1011386@1011386-student-HXJKFAYM265D Desktop % less quiz 
+1011386@1011386-student-HXJKFAYM265D Desktop % mkdir quiz
+mkdir: quiz: File exists
+1011386@1011386-student-HXJKFAYM265D Desktop % cd quiz
+cd: not a directory: quiz
+1011386@1011386-student-HXJKFAYM265D Desktop % echo "move_me.txt" > quiz
+1011386@1011386-student-HXJKFAYM265D Desktop % echo "copy_me.txt" > quiz
+1011386@1011386-student-HXJKFAYM265D Desktop % ls
+20230905110944636.pdf				Terminal Saved Output.txt
+Copy of Lab Equipment Bingo 21-22.pdf		desktop
+Screenshot 2024-09-05 at 9.23.05 AM.png		freud-psyche-1024x613.webp
+Screenshot 2024-09-09 at 10.36.48 AM.png	images.jpg
+Screenshot 2024-09-09 at 10.38.08 AM.png	intro-1683876129.png
+Screenshot 2024-09-09 at 10.38.13 AM.png	quiz
+Screenshot 2024-09-09 at 10.38.16 AM.png	shadows-on-cave.png
+Screenshot 2024-09-09 at 11.15.24 AM.png	terminal_practice
+Terminal Saved Output 2.txt
+1011386@1011386-student-HXJKFAYM265D Desktop % cd quiz
+cd: not a directory: quiz
+1011386@1011386-student-HXJKFAYM265D Desktop % ls
+20230905110944636.pdf				Terminal Saved Output.txt
+Copy of Lab Equipment Bingo 21-22.pdf		desktop
+Screenshot 2024-09-05 at 9.23.05 AM.png		freud-psyche-1024x613.webp
+Screenshot 2024-09-09 at 10.36.48 AM.png	images.jpg
+Screenshot 2024-09-09 at 10.38.08 AM.png	intro-1683876129.png
+Screenshot 2024-09-09 at 10.38.13 AM.png	quiz
+Screenshot 2024-09-09 at 10.38.16 AM.png	shadows-on-cave.png
+Screenshot 2024-09-09 at 11.15.24 AM.png	terminal_practice
+Terminal Saved Output 2.txt
+1011386@1011386-student-HXJKFAYM265D Desktop % quiz
+zsh: command not found: quiz
+1011386@1011386-student-HXJKFAYM265D Desktop % less quiz
+1011386@1011386-student-HXJKFAYM265D Desktop % less quiz
+1011386@1011386-student-HXJKFAYM265D Desktop % each "copy_me.txt" > quiz
+zsh: command not found: each
+1011386@1011386-student-HXJKFAYM265D Desktop % echo "copy_me.txt" > quiz
+1011386@1011386-student-HXJKFAYM265D Desktop % less quiz
+1011386@1011386-student-HXJKFAYM265D Desktop % mkdir quiz
+mkdir: quiz: File exists
+1011386@1011386-student-HXJKFAYM265D Desktop % mkdir destination
+1011386@1011386-student-HXJKFAYM265D Desktop % cp copy_me.txt"
+dquote> less destination
+dquote> ls
+dquote> mv destination
+dquote> date
+dquote> 
+1011386@1011386-student-HXJKFAYM265D Desktop % date
+Mon Sep  9 11:51:08 EDT 2024
+1011386@1011386-student-HXJKFAYM265D Desktop % 
