@@ -8,3 +8,4 @@ In my journal I will write about:
 # Here's my journal entries
 
 * [My journey learning the terminal](terminal.md)
+*[RSA encryption activity](encryption.md)
