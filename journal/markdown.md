@@ -22,4 +22,11 @@ la la la
 
 ## heres an image 
 
-![the text that is displayed](https://images.pexels.com/photos/18400546/pexels-photo-18400546.jpeg?cs=srgb&dl=pexels-coldbeer-277046249-18400546.jpg&fm=jpg)
+![the text that is displayed](https://images.pexels.com/photos/18400546/pe:xels-photo-18400546.jpeg?cs=srgb&dl=pexels-coldbeer-277046249-18400546.jpg&fm=jpg)
+
+## Test table
+| ------- | ------------ |
+|Name     | Facts        |
+|Garfield | Likes Lasagna|
+|Tom      | Chases Jerry |
+
