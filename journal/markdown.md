@@ -22,4 +22,4 @@ la la la
 
 ## heres an image 
 
-![the text that is displayed](file:///Users/1011386/Desktop/istockphoto-1427330471-612x612.jpg)
+![the text that is displayed](https://images.pexels.com/photos/18400546/pexels-photo-18400546.jpeg?cs=srgb&dl=pexels-coldbeer-277046249-18400546.jpg&fm=jpg)
