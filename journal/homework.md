@@ -22,11 +22,11 @@ Zeros to the right of the decimal point and after a non-zero digit are significa
 
 ## Significant Figures Examples
 | Number | Number of Significant Figures|
-|------- | —--------------------------  |
-| 3000   | one significant figure       | 
-| 0.003  | one significant figure       | 
-| 87     | two significant figures      | 
-| 950    | two significant figures      |
+| -----  | ---------------------------  |
+| 3000   | one significant figure       |
+| 0.003  | one significant figure       |
+| 87     | two significant figures      |
+| 9500   | two significant figures      |
 | 5.760  | three significant figures    |
 | 9723   | four significant figures     |
 | 237810 | five significant figures     |
