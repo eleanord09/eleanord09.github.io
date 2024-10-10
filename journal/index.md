@@ -1,4 +1,4 @@
-# Hello! I'm Eleanor and this is my journal
+# Hello! I'm Eleanor DeCarmine and this is my journal
 
 In my journal I will write about:
 
