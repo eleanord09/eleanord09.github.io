@@ -9,4 +9,4 @@ In my journal I will write about:
 
 - [My journey learning the terminal](terminal.md)
 - [RSA encryption activity](encryption.md)
-- [Class notes project](homework.md)
+- [Class notes homework](homework.md)
