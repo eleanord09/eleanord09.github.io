@@ -20,7 +20,7 @@ Zeros at the end of a whole number without a decimal point are not considered si
 ### Trailing zeros in a decimal:
 Zeros to the right of the decimal point and after a non-zero digit are significant
 
-## Significant Figures Examples:
+## Significant Figures Examples
 | Number | Number of Significant Figures|
 |------- | —--------------------------  |
 | 3000   | one significant figure       | 
@@ -36,7 +36,7 @@ Zeros to the right of the decimal point and after a non-zero digit are significa
 Any calculation (addition, subtraction, multiplication, division) should have the same number of significan't figures as the measurement with the least amount of significant figures. 
 
 ## Calculations with Significant Figures Example:
-![ Calculations with Significant Figure. This image shows how to do addition/subtraction and multiplication/division](https://i.ytimg.com/vi/q9Qpo8M_6uo/maxresdefault.jpg)
+![Calculations with Significant Figure. This image shows how to do addition/subtraction and multiplication/division](https://i.ytimg.com/vi/UuAKV4qyLKI/maxresdefault.jpg)
 
 ## Rounding Rules:
 * If the first digit to be dropped is less than 5 then the last retained digit stays the same
