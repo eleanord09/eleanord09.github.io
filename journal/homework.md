@@ -21,6 +21,7 @@ Zeros at the end of a whole number without a decimal point are not considered si
 Zeros to the right of the decimal point and after a non-zero digit are significant
 
 ## Significant Figures Examples
+
 | Number | Number of Significant Figures|
 | -----  | ---------------------------  |
 | 3000   | one significant figure       |
