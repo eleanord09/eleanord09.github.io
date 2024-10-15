@@ -39,10 +39,10 @@ Zeros to the right of the decimal point and after a non-zero digit are significa
 Any calculation (addition, subtraction, multiplication, division) should have the same number of significan't figures as the measurement with the least amount of significant figures. 
 
 ## Calculations with Significant Figures and Roundingn Examples:
-- Addition: $\sqrt{17}+8 = 12$
+- Addition: $\sqrt{17}+8 = 12\$
 - Subtraction: 0.034 - 0.08 = -0.05
 - Multiplication: 2.3 * 400 = 920
-- Division: $\frac{5800}{4} = 1000$  
+- Division: $\frac{5800}{4} = 1000\$  
 
 ## Rounding Rules:
 * If the first digit to be dropped is less than 5 then the last retained digit stays the same
