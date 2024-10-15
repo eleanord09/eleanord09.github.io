@@ -24,25 +24,25 @@ Zeros to the right of the decimal point and after a non-zero digit are significa
 
 ## Significant Figures Examples
 
-| Number | Number of Significant Figures|
-| -----  | ---------------------------  |
-| 3000   | one significant figure       |
-| 0.003  | one significant figure       |
-| 87     | two significant figures      |
-| 9500   | two significant figures      |
-| 5.760  | three significant figures    |
-| 9723   | four significant figures     |
-| 237810 | five significant figures     |
+| Number   | Number of Significant Figure   |
+| :-----:  | :---------------------------:  |
+| 3000     | one significant figure         |
+| 0.003    | one significant figure         |
+| 87       | two significant figures        |
+| 9500     | two significant figures        |
+| 5.760    | three significant figures      |
+| 9723     | four significant figures       |
+| 237810   | five significant figures       |
 
 ## Calculations with Significant Figures:
 
 Any calculation (addition, subtraction, multiplication, division) should have the same number of significan't figures as the measurement with the least amount of significant figures. 
 
 ## Calculations with Significant Figures Examples:
-- Addition: $5.04 + 6.3 = 11.3$
-- Subtraction: $0.034 - 0.08 = -0.05$
-- Multiplication: $2.3 * 400 = 920$
-- Division: $5800/4 = 1000$  
+- Addition: $ 5.04 + 6.3 = 11.3 $
+- Subtraction: $ 0.034 - 0.08 = -0.05 $
+- Multiplication: $ 2.3 * 400 = 920 $
+- Division: $ 5800/4 = 1000 $  
 
 ## Rounding Rules:
 * If the first digit to be dropped is less than 5 then the last retained digit stays the same
@@ -53,11 +53,11 @@ Any calculation (addition, subtraction, multiplication, division) should have th
 
 ## Importance of Significant Figures:
 
-They show the precision of measurements and calculations in scientific work
-When the correct number of significant figures is used it ensures clarity and accuracy in data presentation 
+- They show the precision of measurements and calculations in scientific work
+- When the correct number of significant figures is used it ensures clarity and accuracy in data presentation 
 
 ## Tips When Using Significant Figures:
 
-Always identify the number of significant figures before performing any calculations
-Use scientific notation to clearly specify significant figure in large or small numbers
-Double check your rounding in the calculation’s answer to ensure accuracy 
+- Always identify the number of significant figures before performing any calculations
+- Use scientific notation to clearly specify significant figure in large or small numbers
+- Double check your rounding in the calculation’s answer to ensure accuracy 
