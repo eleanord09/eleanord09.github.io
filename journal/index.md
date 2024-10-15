@@ -8,5 +8,5 @@
 ## Here's my journal entries
 
 - [My journey learning the terminal](terminal.md)
-- [RSA encryption activity](encryption.md)
+- [RSA encryption activity](entries/encryption.md)
 - [Class notes homework](homework.md)
