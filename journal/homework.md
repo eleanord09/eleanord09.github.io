@@ -20,6 +20,8 @@ Zeros at the end of a whole number without a decimal point are not considered si
 ### Trailing zeros in a decimal:
 Zeros to the right of the decimal point and after a non-zero digit are significant
 
+### ![Significant Figures Rules](https://passyworldofmathematics.com/Images/pwmImagesFive/SignificantFiguresTwo550x442JPG.jpg)
+
 ## Significant Figures Examples
 
 | Number | Number of Significant Figures|
@@ -36,12 +38,15 @@ Zeros to the right of the decimal point and after a non-zero digit are significa
 
 Any calculation (addition, subtraction, multiplication, division) should have the same number of significan't figures as the measurement with the least amount of significant figures. 
 
-## Calculations with Significant Figures Example:
-![Calculations with Significant Figure. This image shows how to do addition/subtraction and multiplication/division](https://i.ytimg.com/vi/UuAKV4qyLKI/maxresdefault.jpg)
+## Calculations with Significant Figures Examples:
+
 
 ## Rounding Rules:
 * If the first digit to be dropped is less than 5 then the last retained digit stays the same
 * If the first digit dropped is greater than or equal to 5 round up the last retained digit
+
+## Rounding Significant Figures Example:
+![Rounding Significant Figures example](https://study.com/cimages/multimages/16/rounding_numbers_example.png)
 
 ## Importance of Significant Figures:
 
@@ -53,6 +58,3 @@ When the correct number of significant figures is used it ensures clarity and ac
 Always identify the number of significant figures before performing any calculations
 Use scientific notation to clearly specify significant figure in large or small numbers
 Double check your rounding in the calculation’s answer to ensure accuracy 
-
-
-Learning equations: $f(x)$ $\frac{1}{2}$ $f(x) = x^2$
