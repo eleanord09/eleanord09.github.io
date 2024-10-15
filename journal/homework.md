@@ -55,3 +55,4 @@ Use scientific notation to clearly specify significant figure in large or small 
 Double check your rounding in the calculation’s answer to ensure accuracy 
 
 
+Learning equations: $f(x)$ $\frac{1}{2}$ $f(x) = x^2$
