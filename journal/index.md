@@ -11,4 +11,3 @@
 - [RSA encryption activity](entries/encryption.md)
 - [Class notes homework](homework.md)
 - [Fake business reflection](websitereflection.md)
-- [Lesson about TCP/IP Model](code_practice.html)
