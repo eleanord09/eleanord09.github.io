@@ -1,0 +1,11 @@
+body {
+background-color:LightSteelBlue;
+color:RoyalBlue;
+}
+header {
+background-color:mediumpurple;
+color:Indigo;
+}
+th,td {
+        border: 3px solid
+}
