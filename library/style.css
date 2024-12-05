@@ -1,0 +1,22 @@
+body { 
+	background: #f4eeff; 
+}
+	
+header { 
+	background: Thistle; 
+}
+
+navi { 
+	background: #a6b1e1; 
+}
+
+footer { 
+	background: #a6b1e1;
+}  
+
+#children {
+	color: rgb(147, 120, 184);
+}
+.time{
+border:2px solid;
+}  
