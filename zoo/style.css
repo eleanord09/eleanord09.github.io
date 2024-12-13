@@ -9,3 +9,26 @@ color:Indigo;
 th,td {
         border: 3px solid
 }
+p{
+font-size:15pt;
+font-family:"Palatino",serif;
+text-align:center;
+}
+
+h1{
+font-size:30pt;
+font-family:"Rockwell",serif;;
+text-transform:lowercase;
+text-align:center;
+}
+
+h2{
+font-size:20pt;
+font-family:"Rockwell",serif;;
+text-transform:uppercase;
+text-align:center;
+}
+
+table{
+font-family:"Palatino",serif;
+}
