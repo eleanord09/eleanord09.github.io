@@ -2,41 +2,54 @@
 <html lang="en">
 <head>
     <title>My Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script src="js/init.js"></script>
-    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <style>
-        body {
-            background-color: LightBlue;
-        }
-        h1, h2, h3 {
-            background-color: PowderBlue;
-            color: RoyalBlue; }
-    </style>
 </head>
 <body>
-    <h1>Welcome to my website!</h1>
-    <h2>Introduction:</h2>
-    <p>
-        My name is Eleanor. I'm in 10th grade and I go to school at Arlington Tech.
-        One thing that I like to do for fun is cooking or baking.
-    </p>
-    <blockquote>
-        <q>It's just not my year, but I'm all good out here</q>
-        <cite> — Ethel Cain</cite>
-    </blockquote>
-    <img 
-        src="eleanor.JPG" 
-        alt="Picture of me"
-        srcset="images/eleanor_small.JPG 480w,
-                images/eleanor_medium.JPG 800w,
-                images/eleanor_large.JPG 1200w"
-        sizes="(max-width: 480px) 95vw,
-               (max-width: 800px) 45vw,
-               30vw">
-    <ul>
-        <li><a href="journal/index.md">Click here to read my journal</a></li>
-        <li><a href="recipes/recipe_home.html">Click here to see some of my favorite recipes</a></li>
-    </ul>
-    <h3>Thank you for reading!</h3>
+    <header>
+        <h1 id="main-heading">Welcome to My Website!</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>
+                My name is Eleanor. I'm in 10th grade and I go to school at Arlington Tech.
+                One thing that I like to do for fun is cooking or baking.
+            </p>
+            <blockquote>
+                <p>It's just not my year, but I'm all good out here.</p>
+                <cite>— Ethel Cain</cite>
+            </blockquote>
+        </section>
+        <section id="image">
+            <img 
+                src="eleanor.JPG" 
+                alt="A picture of me"
+                srcset="images/eleanor_small.JPG 480w,
+                        images/eleanor_medium.JPG 800w,
+                        images/eleanor_large.JPG 1200w"
+                sizes="(max-width: 480px) 95vw,
+                       (max-width: 800px) 45vw,
+                       30vw">
+        </section>
+        <section id="links">
+            <h2>Explore More</h2>
+            <ul>
+                <li><a href="journal/index.md">Click here to read my journal</a></li>
+                <li><a href="recipes/recipe_home.html">Click here to see some of my favorite recipes</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Thank you for visiting!</p>
+    </footer>
 </body>
 </html>
+
