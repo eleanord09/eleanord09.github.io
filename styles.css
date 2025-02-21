@@ -1,0 +1,67 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Style 1: width and height */
+.style1 {
+  width: 200px;
+  height: auto;
+}
+
+/* Style 2: border and border-radius */
+.style2 {
+  border: 3px solid #333;
+  border-radius: 15px;
+}
+
+/* Style 3: box-shadow */
+.style3 {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Style 4: opacity */
+.style4 {
+  opacity: 0.5;
+}
+
+/* Style 5: filter grayscale */
+.style5 {
+  filter: grayscale(100%);
+}
+
+/* Style 6: max-width */
+.style6 {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Style 7: object-fit and object-position */
+.style7 {
+  object-fit: cover;
+  object-position: center;
+  width: 300px;
+  height: 200px;
+}
+
+/* Style 8: z-index (requires positioning) */
+.style8 {
+  position: relative;
+  z-index: 10;
+  top: -10px;
+}
+
+
