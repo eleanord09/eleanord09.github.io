@@ -63,6 +63,12 @@ main {
     border-radius: 5px;
 }
 
+#image2 img {
+    max-width: 250px;
+    padding: 0.5rem;
+    border: 3px solid #006699;
+    border-radius: 5px;
+}
 footer {
     background-color: #006699;
     color: white;
