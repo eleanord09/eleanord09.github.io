@@ -77,3 +77,38 @@ footer {
 }
 
 
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: b1bfcc;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease; 
+}
+
+/* Hover effect */
+.nav-links a:hover {
+    color: #8da5ed;  /* Change color to blue on hover */
+}
+
+/* Add border effect on images when hovered */
+#image img,
+#image2 img {
+    transition: border 0.3s ease;
+}
+
+#image img:hover,
+#image2 img:hover {
+    border: 15px solid #8da5ed;  /* Blue border when hovered */
+    border-radius: 10px;  
+
+}

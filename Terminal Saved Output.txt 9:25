@@ -1,0 +1,182 @@
+Last login: Fri Sep 13 11:42:08 on ttys000
+1011386@1011386-student-HXJKFAYM265D ~ % cd Desktop 
+1011386@1011386-student-HXJKFAYM265D Desktop % cd website 
+1011386@1011386-student-HXJKFAYM265D website % ls
+README.md				index.html
+Terminal Saved Output (9:9) .txt
+1011386@1011386-student-HXJKFAYM265D website % vim README.md 
+1011386@1011386-student-HXJKFAYM265D website % cat README.md 
+# Test
+Woah!!
+
+## Even smaller Test
+
+* Headers
+* Smaller headers
+* Paragraphs
+* Lists
+1011386@1011386-student-HXJKFAYM265D website % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+
+no changes added to commit (use "git add" and/or "git commit -a")
+1011386@1011386-student-HXJKFAYM265D website % git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+1011386@1011386-student-HXJKFAYM265D website % git commit -m "learning markdown"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+
+no changes added to commit (use "git add" and/or "git commit -a")
+1011386@1011386-student-HXJKFAYM265D website % git push
+Everything up-to-date
+1011386@1011386-student-HXJKFAYM265D website % git add                          
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+1011386@1011386-student-HXJKFAYM265D website % git add README.md 
+1011386@1011386-student-HXJKFAYM265D website % git commit -m "learning markdown"
+[main c301498] learning markdown
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+1011386@1011386-student-HXJKFAYM265D website % git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 410 bytes | 410.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:eleanord09/eleanord09.github.io.git
+   56a5ced..c301498  main -> main
+1011386@1011386-student-HXJKFAYM265D website % mkdir journal 
+^C
+1011386@1011386-student-HXJKFAYM265D website % mkdir journal
+1011386@1011386-student-HXJKFAYM265D website % cd journal 
+1011386@1011386-student-HXJKFAYM265D journal % vim index.md
+1011386@1011386-student-HXJKFAYM265D journal % git add index.md 
+1011386@1011386-student-HXJKFAYM265D journal % git commit -m "adding index.md"
+[main 9b51840] adding index.md
+ 1 file changed, 6 insertions(+)
+ create mode 100644 journal/index.md
+1011386@1011386-student-HXJKFAYM265D journal % git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 424 bytes | 424.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+To github.com:eleanord09/eleanord09.github.io.git
+   c301498..9b51840  main -> main
+1011386@1011386-student-HXJKFAYM265D journal % mkdir terminal.md
+1011386@1011386-student-HXJKFAYM265D journal % vim terminal.md 
+1011386@1011386-student-HXJKFAYM265D journal % vim terminal.md
+1011386@1011386-student-HXJKFAYM265D journal % vim terminal.md 
+1011386@1011386-student-HXJKFAYM265D journal % rm terminal.md 
+rm: terminal.md: is a directory
+1011386@1011386-student-HXJKFAYM265D journal % rm -rf terminal.md 
+1011386@1011386-student-HXJKFAYM265D journal % vim terminal.md
+1011386@1011386-student-HXJKFAYM265D journal % vim index.md 
+1011386@1011386-student-HXJKFAYM265D journal % git add index.md 
+1011386@1011386-student-HXJKFAYM265D journal % git add terminal.md 
+1011386@1011386-student-HXJKFAYM265D journal % git commit -m "starting journal entries"
+[main 7cadca9] starting journal entries
+ 2 files changed, 7 insertions(+)
+ create mode 100644 journal/terminal.md
+1011386@1011386-student-HXJKFAYM265D journal % git commit -m "journal entry"
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	../.DS_Store
+
+nothing added to commit but untracked files present (use "git add" to track)
+1011386@1011386-student-HXJKFAYM265D journal % git push
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 544 bytes | 544.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:eleanord09/eleanord09.github.io.git
+   9b51840..7cadca9  main -> main
+1011386@1011386-student-HXJKFAYM265D journal % git push
+Everything up-to-date
+1011386@1011386-student-HXJKFAYM265D journal % vim terminal.md 
+1011386@1011386-student-HXJKFAYM265D journal % git add terminal.md 
+1011386@1011386-student-HXJKFAYM265D journal % git commit -m "adding journal"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	../.DS_Store
+
+nothing added to commit but untracked files present (use "git add" to track)
+1011386@1011386-student-HXJKFAYM265D journal % git push
+Everything up-to-date
+1011386@1011386-student-HXJKFAYM265D journal % vim terminal.md 
+1011386@1011386-student-HXJKFAYM265D journal % vim index.md 
+1011386@1011386-student-HXJKFAYM265D journal % git add index.md 
+1011386@1011386-student-HXJKFAYM265D journal % git commit -m "adding journal entries"
+[main a7a4993] adding journal entries
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+1011386@1011386-student-HXJKFAYM265D journal % git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 391 bytes | 391.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:eleanord09/eleanord09.github.io.git
+   7cadca9..a7a4993  main -> main
+1011386@1011386-student-HXJKFAYM265D journal % vim terminal.md 
+1011386@1011386-student-HXJKFAYM265D journal % git add terminal.md 
+1011386@1011386-student-HXJKFAYM265D journal % git commit -m "adding journal entry #1"
+[main 6d4682a] adding journal entry #1
+ 1 file changed, 8 insertions(+)
+1011386@1011386-student-HXJKFAYM265D journal % git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 814 bytes | 814.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:eleanord09/eleanord09.github.io.git
+   a7a4993..6d4682a  main -> main
+1011386@1011386-student-HXJKFAYM265D journal % vim terminal.md 
+1011386@1011386-student-HXJKFAYM265D journal % 
+  [Restored Sep 15, 2024 at 2:47:13 PM]
+Last login: Sun Sep 15 14:47:09 on console
+Restored session: Sun Sep 15 14:44:03 EDT 2024
+1011386@1011386-student-HXJKFAYM265D journal % 
+  [Restored Sep 15, 2024 at 2:59:31 PM]
+Last login: Sun Sep 15 14:59:23 on console
+1011386@1011386-student-HXJKFAYM265D journal % 
+  [Restored Sep 20, 2024 at 8:15:41 AM]
+Last login: Fri Sep 20 08:15:33 on console
+1011386@1011386-student-HXJKFAYM265D journal % 

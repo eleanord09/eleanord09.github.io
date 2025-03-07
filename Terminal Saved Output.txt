@@ -1,0 +1,105 @@
+Last login: Thu Sep  5 11:39:41 on ttys000
+1011386@1011386-student-HXJKFAYM265D ~ % date
+Thu Sep  5 11:42:21 EDT 2024
+1011386@1011386-student-HXJKFAYM265D ~ % ls
+Applications		Documents		Movies			Pictures
+Creative Cloud Files	Downloads		Music			Public
+Desktop			Library			Pearson
+1011386@1011386-student-HXJKFAYM265D ~ % cd Downloads 
+1011386@1011386-student-HXJKFAYM265D Downloads % ls
+1924374ThisIBelieveSpeech1717696966_1717717272.pdf
+Copy of Econ Alive Chapter 13_.docx
+Copy of Econ Alive Chapter 14 Questions Update_.docx
+Copy of PF 3_ Assignment 1 - Intro to Credit Activity Packet .docx
+IMG_0185.JPG
+Notion-3.13.0-universal.dmg
+Screenshot 2024-06-05 at 12.23.27 PM.png
+Screenshot 2024-06-06 at 8.00.00 AM.png
+This I Believe Speech.pdf
+VSCode-darwin-universal.zip
+Visual Studio Code.app
+cdls_quiz
+cdls_quiz.zip
+school
+1011386@1011386-student-HXJKFAYM265D Downloads % cd cdls_quiz
+1011386@1011386-student-HXJKFAYM265D cdls_quiz % ls
+a	b	c	d	e	f	g	h
+1011386@1011386-student-HXJKFAYM265D cdls_quiz % cd a
+1011386@1011386-student-HXJKFAYM265D a % ls
+1.txt	2.txt	3.txt	4.txt
+1011386@1011386-student-HXJKFAYM265D a % cd cdls_quiz
+cd: no such file or directory: cdls_quiz
+1011386@1011386-student-HXJKFAYM265D a % cd
+1011386@1011386-student-HXJKFAYM265D ~ % ls
+Applications		Documents		Movies			Pictures
+Creative Cloud Files	Downloads		Music			Public
+Desktop			Library			Pearson
+1011386@1011386-student-HXJKFAYM265D ~ % cd downloads
+1011386@1011386-student-HXJKFAYM265D downloads % ls 
+1924374ThisIBelieveSpeech1717696966_1717717272.pdf
+Copy of Econ Alive Chapter 13_.docx
+Copy of Econ Alive Chapter 14 Questions Update_.docx
+Copy of PF 3_ Assignment 1 - Intro to Credit Activity Packet .docx
+IMG_0185.JPG
+Notion-3.13.0-universal.dmg
+Screenshot 2024-06-05 at 12.23.27 PM.png
+Screenshot 2024-06-06 at 8.00.00 AM.png
+This I Believe Speech.pdf
+VSCode-darwin-universal.zip
+Visual Studio Code.app
+cdls_quiz
+cdls_quiz.zip
+school
+1011386@1011386-student-HXJKFAYM265D downloads % cd cdls_quiz
+1011386@1011386-student-HXJKFAYM265D cdls_quiz % ls
+a	b	c	d	e	f	g	h
+1011386@1011386-student-HXJKFAYM265D cdls_quiz % cd b
+1011386@1011386-student-HXJKFAYM265D b % ls
+1.txt	2.txt	3.txt	4.txt
+1011386@1011386-student-HXJKFAYM265D b % \\
+zsh: command not found: \
+1011386@1011386-student-HXJKFAYM265D b % 
+1011386@1011386-student-HXJKFAYM265D b % cd ..
+1011386@1011386-student-HXJKFAYM265D cdls_quiz % ls
+a	b	c	d	e	f	g	h
+1011386@1011386-student-HXJKFAYM265D cdls_quiz % cd c
+1011386@1011386-student-HXJKFAYM265D c % ls
+1.txt
+1011386@1011386-student-HXJKFAYM265D c % ..
+zsh: permission denied: ..
+1011386@1011386-student-HXJKFAYM265D c % cd ..
+1011386@1011386-student-HXJKFAYM265D cdls_quiz % ls
+a	b	c	d	e	f	g	h
+1011386@1011386-student-HXJKFAYM265D cdls_quiz % cd d
+1011386@1011386-student-HXJKFAYM265D d % ls
+1.txt	2.txt	3.txt
+1011386@1011386-student-HXJKFAYM265D d % cd ..
+1011386@1011386-student-HXJKFAYM265D cdls_quiz % ls
+a	b	c	d	e	f	g	h
+1011386@1011386-student-HXJKFAYM265D cdls_quiz % cd e
+1011386@1011386-student-HXJKFAYM265D e % ls
+1.txt	2.txt
+1011386@1011386-student-HXJKFAYM265D e % cd ..
+1011386@1011386-student-HXJKFAYM265D cdls_quiz % cd f
+1011386@1011386-student-HXJKFAYM265D f % ls
+1.txt	2.txt
+1011386@1011386-student-HXJKFAYM265D f % cd ..
+1011386@1011386-student-HXJKFAYM265D cdls_quiz % ls
+a	b	c	d	e	f	g	h
+1011386@1011386-student-HXJKFAYM265D cdls_quiz % cd g
+1011386@1011386-student-HXJKFAYM265D g % ls
+1.txt	2.txt	3.txt	4.txt	5.txt
+1011386@1011386-student-HXJKFAYM265D g % cd ,,
+cd: no such file or directory: ,,
+1011386@1011386-student-HXJKFAYM265D g % cd ..
+1011386@1011386-student-HXJKFAYM265D cdls_quiz % ls
+a	b	c	d	e	f	g	h
+1011386@1011386-student-HXJKFAYM265D cdls_quiz % cd h
+1011386@1011386-student-HXJKFAYM265D h % ls
+1.txt	2.txt	3.txt
+1011386@1011386-student-HXJKFAYM265D h % cd ..
+1011386@1011386-student-HXJKFAYM265D cdls_quiz % folder g has the most files
+zsh: command not found: folder
+1011386@1011386-student-HXJKFAYM265D cdls_quiz % date
+Thu Sep  5 11:52:54 EDT 2024
+1011386@1011386-student-HXJKFAYM265D cdls_quiz % 
