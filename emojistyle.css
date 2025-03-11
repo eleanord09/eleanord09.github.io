@@ -1,0 +1,100 @@
+body {
+    background-color: #A7C7E7;
+}
+
+footer {
+    position: absolute;
+    bottom: 0%;
+}
+
+/* Build the emoji face with gradients and shadow */
+.emoji {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    width: 300px;
+    background-image: radial-gradient(
+        #feca3e 58%,
+        #ff8000 80%
+    );
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 30px 30px 35px rgba(0,0,0,0.25);
+}
+
+/* Build the eyes container */
+.eyes {
+    position: relative;
+}
+
+/* Eye shape (oval) */
+.eye {
+    position: absolute;
+    width: 50px;
+    height: 70px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid #4b3025;
+    overflow: visible; /* Ensure pupils are visible */
+    z-index: 2;
+}
+
+/* Pupil - centered and visible */
+.pupil {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #4b3025;
+    border-radius: 50%;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* Position the left eye */
+.left {
+    top: 90px;
+    left: 25%;
+}
+
+/* Position the right eye */
+.right {
+    top: 90px;
+    right: 25%;
+}
+
+/* Create a traditional smile */
+.mouth {
+    height: 50px;
+    width: 140px;
+    background-color: #663d0f;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+    border-radius: 0 0 70px 70px;
+    animation: smile 3s infinite alternate;
+}
+
+/* Smile animation */
+@keyframes smile {
+    0% {
+        height: 50px;
+        border-radius: 0 0 70px 70px;
+    }
+    100% {
+        height: 30px;
+        border-radius: 70px 70px 0 0;
+    }
+}
+
+/* Hide tongue and teeth for now */
+.teeth, .tongue {
+    display: none;
+}
+
+
