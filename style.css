@@ -29,14 +29,20 @@ header {
     display: flex;
     justify-content: center;
     gap: 1rem;
+	color: white;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+
 }
 
+}
+#htmlcss p a{
+	color: white;
+}
 main {
     padding: 1rem;
 }
@@ -81,6 +87,7 @@ footer {
     list-style-type: none;
     padding: 0;
     display: flex;
+	color: white;
 }
 
 .nav-links li {
@@ -89,7 +96,7 @@ footer {
 
 .nav-links a {
     text-decoration: none;
-    color: b1bfcc;
+    color: white;
     font-size: 18px;
     font-weight: bold;
     transition: color 0.3s ease; 
