@@ -26,7 +26,7 @@ We'll use this to inform our study plan for the test.
 |                                                               | 2.3       | A          | Structure content with paragraphs (p) and manage text flow.                                                                                                                                                                        |
 |                                                               | 2.4       | A          | Apply line breaks (br) and horizontal rules (hr) for content separation.                                                                                                                                                           |
 |                                                               | 2.5       | B          | Use the blockquote, q, cite, and abbr tags appropriately.                                                                                                                                                                          |
-|                                                               | 2.6       | C          | Employ code, pre, kbd, and samp tags to display preformatted text, format code snippets and user input.                                                                                                                            |
+|                                                               | 2.6       | B          | Employ code, pre, kbd, and samp tags to display preformatted text, format code snippets and user input.                                                                                                                            |
 |                                                               | 2.7       | A          | Create and manipulate ordered (ol), unordered (ul), and definition lists (dl), including nesting.                                                                                                                                  |
 |                                                               | 2.8       | B          | Create and manipulate tables (table, tr, td), focusing on headers (th), cell merging (colspan, rowspan), captions (caption), and table attributes (e.g., summary).                                                                 |
 | **Section 3: Multimedia and Hyperlinks**                      | 3.1       | B          | Embed images with img tag (src), focusing on alt text (alt) and basic responsive design attributes (srcset, sizes, width, height).                                                                                                 |
@@ -58,5 +58,93 @@ We'll use this to inform our study plan for the test.
  
 
 ## Study Plan
+# **Journal Entry: Code Formatting & Image Maps**  
 
-(We'll start filling this part in next class)
+
+## **Employing `<code>`, `<pre>`, `<kbd>`, and `<samp>` for Preformatted Text and Code Snippets**  
+
+
+### **Overview**  
+Today, I explored HTML elements that help display code snippets, preformatted text, user input, and system output. These tags are especially useful when creating technical documentation, coding tutorials, or interactive web pages that involve user instructions.  
+
+
+Here’s a breakdown of what I learned:  
+- **`<code>`**: Used for displaying inline code snippets. It applies a monospace font to help differentiate code from regular text.  
+- **`<pre>`**: Preserves whitespace and line breaks, making it perfect for displaying blocks of code exactly as written.  
+- **`<kbd>`**: Represents user keyboard input, which is useful for writing tutorials that instruct users to press specific keys.  
+- **`<samp>`**: Displays system output, making it ideal for showing what a program prints to the console.  
+
+
+### **Practice Page**  
+ **[Code Formatting Demo](format.html)**  
+
+
+To get hands-on experience, I built a simple webpage that demonstrates these elements in action. I wrote an HTML file where:  
+- A JavaScript function is displayed inside a `<pre>` block to maintain formatting.  
+- A keyboard shortcut is represented using `<kbd>`.  
+- A console output message appears using `<samp>`.  
+
+
+This exercise helped me understand how these tags contribute to better readability and usability in web content, especially for technical writing.  
+
+
+### **Reflection**  
+Before this practice, I had seen `<code>` and `<pre>` used in documentation but never fully explored their differences. Now, I see how they serve different purposes—`<pre>` preserves formatting, while `<code>` is more suited for inline use. Adding `<kbd>` and `<samp>` to my toolkit will be helpful when writing instructions for users.  
+
+
+One challenge I faced was making the `<code>` snippets stand out visually. To fix this, I added CSS to style them with a bold, dark red color. This made them easier to distinguish from regular text.  
+
+
+This practice reinforced my ability to present technical content effectively. I feel much more confident incorporating these elements into my future web projects.  
+
+
+**Confidence Score Before:** 5/10  
+**Confidence Score After:** 8/10  
+
+
+---
+
+
+## **Designing Interactive Image Maps with `<map>` and `<area>`**  
+
+
+### **Overview**  
+I also worked on designing interactive image maps using the `<map>` and `<area>` elements. Image maps allow users to click on different sections of an image and be redirected to various links or perform other actions. This is useful for navigation menus, infographics, or educational diagrams.  
+
+
+Here’s how these elements work:  
+- **`<map>`**: Groups multiple clickable areas on an image.  
+- **`<area>`**: Defines specific clickable regions within the image. It requires attributes like `shape`, `coords`, and `href` to function properly.  
+
+
+There are different `shape` values that can be used with `<area>`:  
+- **`rect`** (rectangle): Requires four coordinates (x1, y1, x2, y2).  
+- **`circle`**: Requires three values (center x, center y, radius).  
+- **`poly`** (polygon): Uses multiple coordinates to define an irregular shape.  
+
+
+### **Practice Page**  
+ **[Image Map Demo](image_map.html)**  
+
+
+For my practice project, I created an image map where users can click on different sections of an image to navigate to different pages. I defined one rectangular area and one circular area to see how each works.  
+
+
+One challenge was figuring out the exact coordinates for the `<area>` tags. I used an online image map generator to simplify the process. I also made sure to add `alt` attributes for accessibility, which is an important step I initially overlooked.  
+
+
+### **Reflection**  
+Before this practice, I didn’t realize how powerful `<map>` and `<area>` could be for interactive web design. I had assumed that most clickable images were created using JavaScript or CSS, but now I see that HTML alone can handle some of these tasks efficiently.  
+
+
+One limitation is that image maps rely on pixel-based coordinates, which means they don’t always scale well on responsive websites. If I were to use this in a real project, I would research ways to make it work with flexible layouts, such as using percentage-based coordinates or combining it with JavaScript.  
+
+
+Overall, I feel much more comfortable using `<map>` and `<area>`, and I can see how they might be useful in future projects.  
+
+
+**Confidence Score Before:** 4/10  
+**Confidence Score After:** 7/10 
+
+
+
