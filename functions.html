@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<title>JS Functions</title>
+	<script src="functions.js"></script>
+	 <script src="js/init.js"></script>
+	</head>
+	<body>
+<canvas id="myCanvas" width="500" height="500"></canvas>
+<script>
+  const canvas = document.getElementById("myCanvas");
+  const ctx = canvas.getContext("2d");
+
+  // Function to draw a circle at (x, y)
+  function drawCircle(x, y) {
+    ctx.fillStyle = "blue"; // You can change the color here
+    ctx.beginPath();
+    ctx.arc(x, y, 30, 0, 2 * Math.PI); // 30 is the radius
+    ctx.fill();
+    ctx.stroke();
+  }
+
+  // Call the function to draw 5 circles
+  drawCircle(100, 100);
+  drawCircle(200, 150);
+  drawCircle(300, 200);
+  drawCircle(150, 250);
+  drawCircle(250, 300);
+</script>
+
+	</body>
+</html>
