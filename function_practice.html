@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<script src="js/init.js"></script>
+    <title>Canvas Flower Scene</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="400" height="400"></canvas>
+
+    <script>
+        let canvas = document.querySelector("canvas");
+        let ctx = canvas.getContext("2d");
+
+        // Draw background sky
+        ctx.fillStyle = "skyblue";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Draw grass
+        ctx.fillStyle = "green";
+        ctx.fillRect(0, canvas.height - 100, canvas.width, 100);
+
+        // Helper function: draw a petal
+        function drawPetal(ctx, x, y, angle) {
+            ctx.save();
+            ctx.translate(x, y);
+            ctx.rotate(angle);
+            ctx.beginPath();
+            ctx.ellipse(0, 0, 10, 25, 0, 0, 2 * Math.PI);
+            ctx.fillStyle = "pink";
+            ctx.fill();
+            ctx.restore();
+        }
+
+        // Main function: draw a flower
+        function drawFlower(ctx, x, y) {
+            // Draw flower center
+            ctx.beginPath();
+            ctx.arc(x, y, 10, 0, 2 * Math.PI);
+            ctx.fillStyle = "yellow";
+            ctx.fill();
+
+            // Draw petals
+            for (let i = 0; i < 8; i++) {
+                let angle = (i * Math.PI) / 4;
+                drawPetal(ctx, x, y, angle);
+            }
+        }
+
+        // Stamp the flower shape multiple times
+        drawFlower(ctx, 100, 320);
+        drawFlower(ctx, 200, 300);
+        drawFlower(ctx, 300, 330);
+        drawFlower(ctx, 150, 350);
+        drawFlower(ctx, 250, 310);
+    </script>
+</body>
+
+</html>
