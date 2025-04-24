@@ -1,55 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="js/init.js"></script>
-    <title>Bouncing Box Animation</title>
-    <style>
-        canvas {
-            border: 2px solid black;
-            display: block;
-            margin: 20px auto;
-        }
-    </style>
-</head>
-<body>
-    <canvas id="myCanvas" width="500" height="400"></canvas>
-
-    <script>
-        const canvas = document.getElementById("myCanvas");
-        const ctx = canvas.getContext("2d");
-
-        let x = 50;
-        let y = 50;
-        let dx = 2;
-        let dy = 2;
-        const rectWidth = 50;
-        const rectHeight = 50;
-
-        function drawRect(x, y) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = 'blue';
-            ctx.fillRect(x, y, rectWidth, rectHeight);
-        }
-
-        function animate() {
-            drawRect(x, y);
-
-            x += dx;
-            y += dy;
-
-            if (x + rectWidth > canvas.width || x < 0) {
-                dx = -dx;
+  <style>
+            canvas{
+                border:1px solid;
             }
-            if (y + rectHeight > canvas.height || y < 0) {
-                dy = -dy;
-            }
-
-            requestAnimationFrame(animate);
-        }
-
-        animate();
+        </style>
+    </head>
+    <body>
+        <canvas id="myCanvas"
+                width="400"
+                height="400">
+        </canvas>
+        <script src="animation.js">
     </script>
 </body>
 </html>
