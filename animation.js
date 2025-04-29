@@ -5,7 +5,8 @@ let x = 0;
 let dx = 5;
 let y = 0;
 let dy =1; 
-
+let score = 0;
+let gamerunning = true;
 //this is an object
 //we access values in an object like  this:
 //player.x 
@@ -15,6 +16,7 @@ const player = {
     y : 0,
     color: 'green',
     speed: 3
+	
 };
 
 //this is also an object. We'll add the keys later.
@@ -56,23 +58,34 @@ function movePlayer(){
     //is already a true/false value(boolean), so we don't need a comparison
     //this is equivalent to saying
     //if(keys['ArrowDown']==true)
-    if(keys['ArrowDown']){
+   if(keys['ArrowDown'] && player.y + 20 + player.speed <= canvas.height){
         player.y += player.speed;
     }
-    if(keys['ArrowUp']){
+    if(keys['ArrowUp'] && player.y - 20 - player.speed >= 0){
         player.y -= player.speed;
     }
-    if(keys['ArrowLeft']){
+    if(keys['ArrowLeft'] && player.x - 20 - player.speed >= 0){
         player.x -= player.speed;
     }
-    if(keys['ArrowRight']){
+    if(keys['ArrowRight'] && player.x + 20 + player.speed <= canvas.width){
         player.x += player.speed;
     }
 }
 
 
+
+function drawScore(){
+	ctx.font = "10px Arial";
+	ctx.fillText(score, 10,10);
+}
 function animate() {
-    drawRect(x,y);
+	if(gamerunning){
+    score = score + 1;
+	if(score >= 800){
+	gamerunning = false;
+}
+	drawRect(x,y);
+	drawScore();
     movePlayer();
     drawPlayer();
 
@@ -97,7 +110,8 @@ function animate() {
     }
 
     //this schedules the next call of this function for 1/60
-    //of a second from now
+    //of a second from nowi
+}
     requestAnimationFrame(animate);
 }
 
