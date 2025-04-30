@@ -6,17 +6,17 @@ let dx = 5;
 let y = 0;
 let dy =1; 
 let score = 0;
-let gamerunning = true;
+let gameRunning = true;
+
 //this is an object
 //we access values in an object like  this:
 //player.x 
 const player = {
     //key:value pair
-    x : 0,
-    y : 0,
+    x : 200,
+    y : 200,
     color: 'green',
     speed: 3
-	
 };
 
 //this is also an object. We'll add the keys later.
@@ -34,7 +34,7 @@ function drawRect(x,y) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = 'blue';
     ctx.fillRect(x,y,50,50);
-    ctx.fill();
+    //ctx.fill();
 }
 
 function drawPlayer(){
@@ -58,60 +58,94 @@ function movePlayer(){
     //is already a true/false value(boolean), so we don't need a comparison
     //this is equivalent to saying
     //if(keys['ArrowDown']==true)
-   if(keys['ArrowDown'] && player.y + 20 + player.speed <= canvas.height){
+    if(keys['ArrowDown']){
         player.y += player.speed;
     }
-    if(keys['ArrowUp'] && player.y - 20 - player.speed >= 0){
+    if(keys['ArrowUp']){
         player.y -= player.speed;
     }
-    if(keys['ArrowLeft'] && player.x - 20 - player.speed >= 0){
+    if(keys['ArrowLeft'] && 
+    player.x > 50){
         player.x -= player.speed;
     }
-    if(keys['ArrowRight'] && player.x + 20 + player.speed <= canvas.width){
+    if(keys['ArrowRight'] && player.x < 350){
         player.x += player.speed;
     }
+    //TODO: what  happens if the player
+    //goes off the edge of the screen??
+    if(player.y < 0){
+        player.y = 400;
+    }
+    if (player.y > 400){
+        player.y = 0;
+    }
 }
-
-
 
 function drawScore(){
-	ctx.font = "10px Arial";
-	ctx.fillText(score, 10,10);
+    ctx.font = "10px Arial";
+    ctx.fillText(score, 10,10);
 }
+
+function moveBox(){
+        // This code handles the position of the bouncing box.
+        x = x + dx;
+        y = y + dy;
+
+        if(x > 350){
+            dx = dx * -1;
+        }
+        if(x < 0){
+            dx = dx * -1;
+        }
+        if(y > 350){
+            dy = dy * -1;
+        }
+        if(y < 0){
+            dy = dy * -1;
+        }
+}
+function checkCollision() {
+    let playerLeft = player.x - 20;
+    let playerRight = player.x + 20;
+    let playerTop = player.y - 20;
+    let playerBottom = player.y + 20;
+
+    let boxLeft = x;
+    let boxRight = x + 50;
+    let boxTop = y;
+    let boxBottom = y + 50;
+
+    if (
+        playerRight > boxLeft &&
+        playerLeft < boxRight &&
+        playerBottom > boxTop &&
+        playerTop < boxBottom
+    ) {
+        // Collision detected!
+        gameRunning = false;
+        alert("Game Over! Score: " + score);
+    }
+}
+
+
+
 function animate() {
-	if(gamerunning){
-    score = score + 1;
-	if(score >= 800){
-	gamerunning = false;
-}
-	drawRect(x,y);
-	drawScore();
-    movePlayer();
-    drawPlayer();
+    //`gameRunning` tracks the game state. 
+    //when it becomes false, game over
+    //so we'll only update score, move shapes, etc
+    //as long as gameRunning is true
+    if(gameRunning){
+        score++;
 
-    // This code handles the position of the bouncing box.
-    //We probably should have separated it out into a function
-    //called moveBox()
-    x = x + dx;
-    y = y + dy;
-
-    if(x > 350){
-        dx = dx * -1;
+        drawRect(x,y);
+        drawScore();
+        movePlayer();
+        drawPlayer();
+        moveBox();
+	checkCollision();
     }
-    if(x < 0){
-        dx = dx * -1;
-    }
-
-    if(y > 350){
-        dy = dy * -1;
-    }
-    if(y < 0){
-        dy = dy * -1;
-    }
-
     //this schedules the next call of this function for 1/60
-    //of a second from nowi
-}
+    //of a second from now
     requestAnimationFrame(animate);
 }
 
@@ -123,7 +157,6 @@ function handleKeyPress(e){
     //console.log(e.key); 
     keys[e.key] = true;
 }
-
 
 document.addEventListener('keydown', handleKeyPress);
 
