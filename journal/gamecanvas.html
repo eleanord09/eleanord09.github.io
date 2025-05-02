@@ -1,0 +1,30 @@
+<canvas id="myCanvas" width="400" height="400" style="border:1px solid black;"></canvas>
+<script>
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+
+// draw player (circle)
+ctx.fillStyle = "green";
+ctx.beginPath();
+ctx.arc(200, 300, 15, 0, 2 * Math.PI);
+ctx.fill();
+
+// draw current branch
+ctx.fillStyle = "brown";
+ctx.fillRect(150, 320, 100, 10);
+
+// draw next branch
+ctx.fillStyle = "brown";
+ctx.fillRect(180, 200, 100, 10);
+
+// draw leaves (triangle)
+ctx.fillStyle = "darkgreen";
+ctx.beginPath();
+ctx.moveTo(180, 190);
+ctx.lineTo(230, 150);
+ctx.lineTo(280, 190);
+ctx.closePath();
+ctx.fill();
+</script>
+
+<p>will make more complex and look better</p>
