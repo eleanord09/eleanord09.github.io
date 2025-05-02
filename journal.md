@@ -11,5 +11,5 @@
 - [Fake business reflection](journal/websitereflection.md)
 - [Cosmetology website](journal/website.html)
 - [Exam prep](journal/exam_prep.md)
-
+- [Game plan](journal/gameplan.md]
 
