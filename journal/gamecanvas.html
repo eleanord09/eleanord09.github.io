@@ -1,30 +1,57 @@
-<canvas id="myCanvas" width="400" height="400" style="border:1px solid black;"></canvas>
-<script>
-const canvas = document.getElementById("myCanvas");
-const ctx = canvas.getContext("2d");
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+			<title>Improved Tree Platformer Concept Art</title>
+			<style>
+    canvas {
+      background-color: #cfeefc;
+      display: block;
+      margin: 0 auto;
+      border: 2px solid #444;
+    }
+  </style>
+		</head>
+		<body>
+			<canvas id="gameCanvas" width="400" height="600"></canvas>
+			<script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
 
-// draw player (circle)
-ctx.fillStyle = "green";
-ctx.beginPath();
-ctx.arc(200, 300, 15, 0, 2 * Math.PI);
-ctx.fill();
+    // Draw background tree trunk
+    ctx.fillStyle = "#6d4c41";
+    ctx.fillRect(180, 0, 40, 600);
 
-// draw current branch
-ctx.fillStyle = "brown";
-ctx.fillRect(150, 320, 100, 10);
+    // Draw treetop using arcs for a leafy look
+    ctx.fillStyle = "#388e3c";
+    const leafCenters = [
+      { x: 150, y: 80 }, { x: 200, y: 60 }, { x: 250, y: 80 },
+      { x: 180, y: 100 }, { x: 220, y: 100 }
+    ];
+    leafCenters.forEach(pos => {
+      ctx.beginPath();
+      ctx.arc(pos.x, pos.y, 50, 0, Math.PI * 2);
+      ctx.fill();
+    });
 
-// draw next branch
-ctx.fillStyle = "brown";
-ctx.fillRect(180, 200, 100, 10);
+    // Draw branches at different X positions
+    const branches = [
+      { x: 60, y: 480, width: 180 },
+      { x: 140, y: 380, width: 120 },
+      { x: 80, y: 280, width: 160 },
+      { x: 170, y: 180, width: 130 },
+      { x: 100, y: 100, width: 100 }
+    ];
+    ctx.fillStyle = "#8d6e63";
+    branches.forEach(branch => {
+      ctx.fillRect(branch.x, branch.y, branch.width, 15);
+    });
 
-// draw leaves (triangle)
-ctx.fillStyle = "darkgreen";
-ctx.beginPath();
-ctx.moveTo(180, 190);
-ctx.lineTo(230, 150);
-ctx.lineTo(280, 190);
-ctx.closePath();
-ctx.fill();
-</script>
-
-<p>will make more complex and look better</p>
+    // Draw player as a red circle on the second-lowest branch
+    ctx.fillStyle = "#e53935";
+    ctx.beginPath();
+    ctx.arc(160, 370, 15, 0, Math.PI * 2);
+    ctx.fill();
+  </script>
+		</body>
+	</html>
