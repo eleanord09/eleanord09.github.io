@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Branch Jumper</title>
+  <title>Endless Branch Jumper</title>
   <style>
     canvas {
       border: 1px solid black;
       background-color: #e0f7fa;
+      display: block;
+      margin: auto;
+    }
+    body {
+      text-align: center;
+      font-family: Arial;
     }
   </style>
 </head>
 <body>
-  <h2>Branch Jumper</h2>
-  <p>Press <strong>Spacebar</strong> to jump from branch to branch!</p>
-  <canvas id="gameCanvas" width="400" height="400"></canvas>
+  <h2>Endless Branch Jumper</h2>
+  <p>Press <strong>Spacebar</strong> to jump. Don't fall!</p>
+  <canvas id="gameCanvas" width="400" height="500"></canvas>
+
   <script>
     const canvas = document.getElementById("gameCanvas");
     const ctx = canvas.getContext("2d");
 
     const player = {
       x: 200,
-      y: 300,
+      y: 400,
       radius: 15,
       color: "green",
       vy: 0,
@@ -28,18 +35,20 @@
       onGround: false
     };
 
-    const branches = [
-      { x: 150, y: 350, width: 100, height: 10 },
-      { x: 200, y: 250, width: 100, height: 10 },
-      { x: 120, y: 150, width: 100, height: 10 },
-      { x: 180, y: 50, width: 100, height: 10 }
+    let branches = [
+      { x: 150, y: 450, width: 100, height: 10 }
     ];
 
+    let score = 0;
     let gameOver = false;
-    let gameWon = false;
+    const branchInterval = 100;
+    const scrollSpeed = 1;
+    let lastBranchY = 450;
+    let lastBranchX = 150;
+    const maxHorizontalGap = 100; // maximum horizontal distance between branches
 
     document.addEventListener("keydown", (e) => {
-      if (e.code === "Space" && player.onGround && !gameOver && !gameWon) {
+      if (e.code === "Space" && player.onGround && !gameOver) {
         player.vy = player.jumpPower;
         player.onGround = false;
       }
@@ -63,58 +72,73 @@
       return (
         player.y + player.radius >= branch.y &&
         player.y + player.radius <= branch.y + branch.height &&
-        player.x >= branch.x &&
-        player.x <= branch.x + branch.width &&
+        player.x + player.radius > branch.x &&
+        player.x - player.radius < branch.x + branch.width &&
         player.vy >= 0
       );
     }
 
     function updateBranches() {
       branches.forEach(branch => {
-        branch.y += 1; // move branches downward
+        branch.y += scrollSpeed;
       });
+
+      // Add new branches within reachable distance
+      while (lastBranchY > 0) {
+        const width = Math.random() * 60 + 60;
+        let x = lastBranchX + (Math.random() * 2 - 1) * maxHorizontalGap;
+        x = Math.max(0, Math.min(canvas.width - width, x)); // keep within canvas
+        const newY = lastBranchY - branchInterval;
+        branches.push({ x: x, y: newY, width: width, height: 10 });
+        lastBranchY = newY;
+        lastBranchX = x;
+      }
+
+      // Remove branches off-screen
+      branches = branches.filter(branch => branch.y < canvas.height + 20);
+    }
+
+    function drawScore() {
+      ctx.fillStyle = "black";
+      ctx.font = "16px Arial";
+      ctx.fillText("Score: " + score, 10, 20);
+    }
+
+    function drawGameOver() {
+      ctx.fillStyle = "red";
+      ctx.font = "24px Arial";
+      ctx.fillText("Game Over", 130, 250);
     }
 
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Move branches
       updateBranches();
 
-      // Apply gravity
       player.vy += player.gravity;
       player.y += player.vy;
 
-      // Check for landing
       player.onGround = false;
-      branches.forEach(branch => {
+      for (const branch of branches) {
         if (checkCollision(branch)) {
           player.y = branch.y - player.radius;
           player.vy = 0;
           player.onGround = true;
+          score++;
+          break;
         }
-      });
+      }
 
-      // Check for game over or win
       if (player.y > canvas.height) {
         gameOver = true;
       }
 
-      if (player.y < 0) {
-        gameWon = true;
-      }
-
       drawBranches();
       drawPlayer();
+      drawScore();
 
       if (gameOver) {
-        ctx.fillStyle = "red";
-        ctx.font = "20px Arial";
-        ctx.fillText("Game Over", 140, 200);
-      } else if (gameWon) {
-        ctx.fillStyle = "green";
-        ctx.font = "20px Arial";
-        ctx.fillText("You Win!", 150, 200);
+        drawGameOver();
       } else {
         requestAnimationFrame(draw);
       }
@@ -124,3 +148,5 @@
   </script>
 </body>
 </html>
+
+
