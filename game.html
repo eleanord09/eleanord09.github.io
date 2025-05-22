@@ -17,7 +17,7 @@
 </head>
 <body>
   <h2>Endless Branch Jumper</h2>
-  <p>Press <strong>Spacebar</strong> to jump. Don't fall!</p>
+  <p>Press <strong>↑ Arrow</strong> to jump. Don't fall!</p>
   <canvas id="gameCanvas" width="400" height="500"></canvas>
 
   <script>
@@ -35,20 +35,45 @@
       onGround: false
     };
 
-    let branches = [
-      { x: 150, y: 450, width: 100, height: 10 }
+    let branches = [];
+    const branchInterval = 100;
+    const scrollSpeed = 1;
+    const branchPattern = [
+      { x: 150, width: 100 },
+      { x: 180, width: 80 },
+      { x: 130, width: 90 },
+      { x: 170, width: 100 },
+      { x: 120, width: 110 },
+      { x: 200, width: 90 },
     ];
+    let patternIndex = 0;
+    let lastBranchY = 450;
+
+    // Initialize starting branches
+    function initBranches() {
+      branches = [];
+      patternIndex = 0;
+      lastBranchY = 450;
+      while (lastBranchY > -canvas.height * 2) { // more initial branches
+        const pattern = branchPattern[patternIndex % branchPattern.length];
+        branches.push({
+          x: pattern.x,
+          y: lastBranchY,
+          width: pattern.width,
+          height: 10
+        });
+        lastBranchY -= branchInterval;
+        patternIndex++;
+      }
+    }
+
+    initBranches();
 
     let score = 0;
     let gameOver = false;
-    const branchInterval = 100;
-    const scrollSpeed = 1;
-    let lastBranchY = 450;
-    let lastBranchX = 150;
-    const maxHorizontalGap = 100; // maximum horizontal distance between branches
 
     document.addEventListener("keydown", (e) => {
-      if (e.code === "Space" && player.onGround && !gameOver) {
+      if (e.code === "ArrowUp" && player.onGround && !gameOver) {
         player.vy = player.jumpPower;
         player.onGround = false;
       }
@@ -78,23 +103,47 @@
       );
     }
 
-    function updateBranches() {
-      branches.forEach(branch => {
-        branch.y += scrollSpeed;
-      });
+function Branches() {
+  // Move all branches downward
+  branches.forEach(branch => {
+	branch.y += scrollSpeed;
+  });
 
-      // Add new branches within reachable distance
-      while (lastBranchY > 0) {
-        const width = Math.random() * 60 + 60;
-        let x = lastBranchX + (Math.random() * 2 - 1) * maxHorizontalGap;
-        x = Math.max(0, Math.min(canvas.width - width, x)); // keep within canvas
+  // Get the topmost (smallest y) branch
+  const topBranchY = Math.min(...branches.map(b => b.y));
+
+  // If top branch is approaching the top of the canvas, add a new one above it
+  if (topBranchY > -branchInterval) {
+	const pattern = branchPattern[patternIndex % branchPattern.length];
+	const newY = topBranchY - branchInterval;
+	branches.push({
+  	x: pattern.x,
+  	y: newY,
+  	width: pattern.width,
+  	height: 10
+	});
+	patternIndex++;
+  }
+
+  // Remove branches that fall off the bottom of the screen
+  branches = branches.filter(branch => branch.y < canvas.height + 20);
+}
+
+      // Generate infinite branches above
+      while (lastBranchY > -1000) {
+        const pattern = branchPattern[patternIndex % branchPattern.length];
         const newY = lastBranchY - branchInterval;
-        branches.push({ x: x, y: newY, width: width, height: 10 });
+        branches.push({
+          x: pattern.x,
+          y: newY,
+          width: pattern.width,
+          height: 10
+        });
         lastBranchY = newY;
-        lastBranchX = x;
+        patternIndex++;
       }
 
-      // Remove branches off-screen
+      // Clean up branches off-screen below
       branches = branches.filter(branch => branch.y < canvas.height + 20);
     }
 
