@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Endless Branch Jumper</title>
+  <title>Branch Jumper</title>
   <style>
     canvas {
       border: 1px solid black;
@@ -17,163 +17,187 @@
 </head>
 <body>
   <h2>Endless Branch Jumper</h2>
-  <p>Press <strong>↑ Arrow</strong> to jump. Don't fall!</p>
+  <p>Press <strong>↑ Arrow</strong> to jump and <strong>→ ←</strong> to move back and forth. Don't fall!</p>
   <canvas id="gameCanvas" width="400" height="500"></canvas>
 
-  <script>
-    const canvas = document.getElementById("gameCanvas");
-    const ctx = canvas.getContext("2d");
+<script>
+  const canvas = document.getElementById("gameCanvas");
+  const ctx = canvas.getContext("2d");
 
-    const player = {
-      x: 200,
-      y: 400,
-      radius: 15,
-      color: "green",
-      vy: 0,
-      gravity: 0.5,
-      jumpPower: -10,
-      onGround: false
-    };
+  const player = {
+    x: 200,
+    y: 400,
+    radius: 15,
+    color: "green",
+    vy: 0,
+    vx: 0,
+    gravity: 0.5,
+    jumpPower: -10,
+    onGround: false,
+    moveSpeed: 4,
+  };
 
-    let branches = [];
-    const branchInterval = 100;
-    const scrollSpeed = 1;
-    const branchPattern = [
-      { x: 150, width: 100 },
-      { x: 180, width: 80 },
-      { x: 130, width: 90 },
-      { x: 170, width: 100 },
-      { x: 120, width: 110 },
-      { x: 200, width: 90 }
-    ];
-    let patternIndex = 0;
-    let lastBranchY = 450;
+  let keys = {
+    ArrowLeft: false,
+    ArrowRight: false
+  };
 
-    function initBranches() {
-      branches = [];
-      patternIndex = 0;
-      lastBranchY = 450;
-      while (lastBranchY > -canvas.height * 2) {
-        const pattern = branchPattern[patternIndex % branchPattern.length];
-        branches.push({
-          x: pattern.x,
-          y: lastBranchY,
-          width: pattern.width,
-          height: 10
-        });
-        lastBranchY -= branchInterval;
-        patternIndex++;
-      }
+  let branches = [];
+  const branchInterval = 100;
+  const scrollSpeed = 1;
+  const branchPattern = [
+    { x: 150, width: 100 },
+    { x: 180, width: 80 },
+    { x: 130, width: 90 },
+    { x: 170, width: 100 },
+    { x: 120, width: 110 },
+    { x: 200, width: 90 }
+  ];
+  let patternIndex = 0;
+  let lastBranchY = 450;
+
+  function initBranches() {
+    branches = [];
+    patternIndex = 0;
+    lastBranchY = 450;
+    while (lastBranchY > -canvas.height * 2) {
+      const pattern = branchPattern[patternIndex % branchPattern.length];
+      branches.push({
+        x: pattern.x,
+        y: lastBranchY,
+        width: pattern.width,
+        height: 10
+      });
+      lastBranchY -= branchInterval;
+      patternIndex++;
     }
+  }
 
-    initBranches();
+  initBranches();
 
-    let score = 0;
-    let gameOver = false;
+  let score = 0;
+  let gameOver = false;
 
-    document.addEventListener("keydown", (e) => {
-      if (e.code === "ArrowUp" && player.onGround && !gameOver) {
-        player.vy = player.jumpPower;
-        player.onGround = false;
-      }
+  document.addEventListener("keydown", (e) => {
+    if (e.code === "ArrowUp" && player.onGround && !gameOver) {
+      player.vy = player.jumpPower;
+      player.onGround = false;
+    }
+    if (e.code === "ArrowLeft") keys.ArrowLeft = true;
+    if (e.code === "ArrowRight") keys.ArrowRight = true;
+  });
+
+  document.addEventListener("keyup", (e) => {
+    if (e.code === "ArrowLeft") keys.ArrowLeft = false;
+    if (e.code === "ArrowRight") keys.ArrowRight = false;
+  });
+
+  function drawPlayer() {
+    ctx.fillStyle = player.color;
+    ctx.beginPath();
+    ctx.arc(player.x, player.y, player.radius, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  function drawBranches() {
+    ctx.fillStyle = "brown";
+    branches.forEach(branch => {
+      ctx.fillRect(branch.x, branch.y, branch.width, branch.height);
+    });
+  }
+
+  function checkCollision(branch) {
+    return (
+      player.y + player.radius >= branch.y &&
+      player.y + player.radius <= branch.y + branch.height &&
+      player.x + player.radius > branch.x &&
+      player.x - player.radius < branch.x + branch.width &&
+      player.vy >= 0
+    );
+  }
+
+  function updateBranches() {
+    branches.forEach(branch => {
+      branch.y += scrollSpeed;
     });
 
-    function drawPlayer() {
-      ctx.fillStyle = player.color;
-      ctx.beginPath();
-      ctx.arc(player.x, player.y, player.radius, 0, Math.PI * 2);
-      ctx.fill();
-    }
-
-    function drawBranches() {
-      ctx.fillStyle = "brown";
-      branches.forEach(branch => {
-        ctx.fillRect(branch.x, branch.y, branch.width, branch.height);
+    const topBranchY = Math.min(...branches.map(b => b.y));
+    if (topBranchY > -branchInterval) {
+      const pattern = branchPattern[patternIndex % branchPattern.length];
+      const newY = topBranchY - branchInterval;
+      branches.push({
+        x: pattern.x,
+        y: newY,
+        width: pattern.width,
+        height: 10
       });
+      patternIndex++;
     }
 
-    function checkCollision(branch) {
-      return (
-        player.y + player.radius >= branch.y &&
-        player.y + player.radius <= branch.y + branch.height &&
-        player.x + player.radius > branch.x &&
-        player.x - player.radius < branch.x + branch.width &&
-        player.vy >= 0
-      );
-    }
+    branches = branches.filter(branch => branch.y < canvas.height + 20);
+  }
 
-    function updateBranches() {
-      // Move branches down
-      branches.forEach(branch => {
-        branch.y += scrollSpeed;
-      });
+  function drawScore() {
+    ctx.fillStyle = "black";
+    ctx.font = "16px Arial";
+    ctx.fillText("Score: " + score, 10, 20);
+  }
 
-      // Add new branch above if needed
-      const topBranchY = Math.min(...branches.map(b => b.y));
-      if (topBranchY > -branchInterval) {
-        const pattern = branchPattern[patternIndex % branchPattern.length];
-        const newY = topBranchY - branchInterval;
-        branches.push({
-          x: pattern.x,
-          y: newY,
-          width: pattern.width,
-          height: 10
-        });
-        patternIndex++;
-      }
+  function drawGameOver() {
+    ctx.fillStyle = "red";
+    ctx.font = "24px Arial";
+    ctx.fillText("Game Over", 130, 250);
+  }
 
-      // Remove branches that fall off the bottom
-      branches = branches.filter(branch => branch.y < canvas.height + 20);
-    }
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    function drawScore() {
-      ctx.fillStyle = "black";
-      ctx.font = "16px Arial";
-      ctx.fillText("Score: " + score, 10, 20);
-    }
+    updateBranches();
 
-    function drawGameOver() {
-      ctx.fillStyle = "red";
-      ctx.font = "24px Arial";
-      ctx.fillText("Game Over", 130, 250);
-    }
+    // Apply gravity
+    player.vy += player.gravity;
+    player.y += player.vy;
 
-    function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Horizontal movement
+    player.vx = 0;
+    if (keys.ArrowLeft) player.vx = -player.moveSpeed;
+    if (keys.ArrowRight) player.vx = player.moveSpeed;
+    player.x += player.vx;
 
-      updateBranches();
+    // Keep player within canvas
+    if (player.x - player.radius < 0) player.x = player.radius;
+    if (player.x + player.radius > canvas.width) player.x = canvas.width - player.radius;
 
-      player.vy += player.gravity;
-      player.y += player.vy;
-
-      player.onGround = false;
-      for (const branch of branches) {
-        if (checkCollision(branch)) {
-          player.y = branch.y - player.radius;
-          player.vy = 0;
-          player.onGround = true;
-          score++;
-          break;
-        }
-      }
-
-      if (player.y > canvas.height) {
-        gameOver = true;
-      }
-
-      drawBranches();
-      drawPlayer();
-      drawScore();
-
-      if (gameOver) {
-        drawGameOver();
-      } else {
-        requestAnimationFrame(draw);
+    player.onGround = false;
+    for (const branch of branches) {
+      if (checkCollision(branch)) {
+        player.y = branch.y - player.radius;
+        player.vy = 0;
+        player.onGround = true;
+        score++;
+        break;
       }
     }
 
-    draw();
-  </script>
+    if (player.y > canvas.height) {
+      gameOver = true;
+    }
+
+    drawBranches();
+    drawPlayer();
+    drawScore();
+
+    if (gameOver) {
+      drawGameOver();
+    } else {
+      requestAnimationFrame(draw);
+    }
+  }
+
+  draw();
+</script>
+
+
 </body>
 </html>
 
