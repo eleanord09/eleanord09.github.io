@@ -13,7 +13,7 @@ Originally, my recipe book had very basic (and kind of ugly) styling, as you can
 **Old Picture:**
 
 
-![Old Recipe Book](./images/website/old_website.jpg)
+![Old Recipe Book](./images/website/old_website)
 
 
 After learning how to use CSS more effectively, I created a  stylesheet to change the look of the  cookbook. I focused on:
@@ -28,7 +28,7 @@ After learning how to use CSS more effectively, I created a  stylesheet to chang
 **New Picture:**
 
 
-![New Recipe Book](./images/website/new_website.jpg)
+![New Recipe Book](./images/website/new_website)
 
 
 ## What I Learned
