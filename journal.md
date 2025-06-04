@@ -12,6 +12,6 @@
 - [Cosmetology website](journal/website.html)
 - [Exam prep](journal/exam_prep.md)
 - [Game plan](journal/gameplan.md)
-
+- [Final project reflection](journal/finalproject.md)
 
 
