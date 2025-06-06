@@ -13,7 +13,8 @@ Originally, my recipe book had very basic (and kind of ugly) styling, as you can
 **Old Picture:**
 
 
-![Old Recipe Book](./images/website/old_website)
+
+<img src="../images/old_website.png" alt="Old Recipe Book" width="400">
 
 
 After learning how to use CSS more effectively, I created a  stylesheet to change the look of the  cookbook. I focused on:
@@ -28,7 +29,8 @@ After learning how to use CSS more effectively, I created a  stylesheet to chang
 **New Picture:**
 
 
-![New Recipe Book](./images/website/new_website)
+
+<img src="../images/new_website.png" alt="New Recipe Book" width="400">
 
 
 ## What I Learned
